@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Kelompok</string>
+    <string-array name="mahasiswa">
+        <item>Defa Mulya Pratama</item>
+        <item>Faza Nurfaizi</item>
+    </string-array>
+    <string name="pilihan"><b>Pilihan</b></string>
+</resources>
