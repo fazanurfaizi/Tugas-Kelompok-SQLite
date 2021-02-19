@@ -1,4 +1,4 @@
-package com.example.kelompok;
+package com.example.kelompok.activities;
 
 import android.os.Bundle;
 

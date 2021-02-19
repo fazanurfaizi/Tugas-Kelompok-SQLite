@@ -1,8 +1,10 @@
-package com.example.kelompok;
+package com.example.kelompok.activities;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.kelompok.R;
 
 public class DetailData extends AppCompatActivity {
 
