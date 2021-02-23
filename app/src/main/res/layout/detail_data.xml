@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    tools:context=".DetailData">
+    tools:context=".activities.DetailData">
 
     <ImageView
         android:layout_width="match_parent"
@@ -13,81 +13,87 @@
         android:layout_marginTop="200px"
         android:layout_marginBottom="100px"/>
 
-    <LinearLayout
+    <ScrollView android:id="@+id/scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="-100px"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_create_black_24dp"
-            android:text="Nomor" />
-
-        <EditText
-            android:id="@+id/txtDetailNomor"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:editable="false"
-            android:text="0" />
+            android:layout_gravity="center"
+            android:layout_margin="-100px"
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_group_black_24dp"
-            android:text="Nama" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_create_black_24dp"
+                android:text="Nomor" />
 
-        <EditText
-            android:id="@+id/txtDetailNama"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="none"
-            android:text="Jalaludin"
-            android:editable="false"/>
+            <EditText
+                android:id="@+id/txtDetailNomor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:text="0" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_date_range_black_24dp"
-            android:text="Tanggal Lahir" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_group_black_24dp"
+                android:text="Nama" />
 
-        <EditText
-            android:id="@+id/tglDetailLahir"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="1996-07-11"
-            android:editable="false"/>
+            <EditText
+                android:id="@+id/txtDetailNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:text="Jalaludin"
+                android:editable="false"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_person_black_24dp"
-            android:inputType="none"
-            android:text="Jenis Kelamin" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_date_range_black_24dp"
+                android:text="Tanggal Lahir" />
 
-        <EditText
-            android:id="@+id/txtDetailJenkel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Laki-laki"
-            android:editable="false"/>
+            <EditText
+                android:id="@+id/tglDetailLahir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1996-07-11"
+                android:editable="false"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_place_black_24dp"
-            android:text="Alamat" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_person_black_24dp"
+                android:inputType="none"
+                android:text="Jenis Kelamin" />
 
-        <EditText
-            android:id="@+id/txtDetailAlamat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Rangkasbitung"
-            android:editable="false"/>
+            <EditText
+                android:id="@+id/txtDetailJenkel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Laki-laki"
+                android:editable="false"/>
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_place_black_24dp"
+                android:text="Alamat" />
+
+            <EditText
+                android:id="@+id/txtDetailAlamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rangkasbitung"
+                android:editable="false"/>
+
+        </LinearLayout>
+    </ScrollView>
 
 
 

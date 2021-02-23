@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Dialog">
+    tools:context=".activities.Dialog">
     
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,49 +14,81 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
             android:text="Nomor"/>
         <EditText
             android:id="@+id/txtInputNomor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
+            android:layout_marginBottom="10dp"
             android:drawableLeft="@drawable/ic_create_black_24dp"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
             android:text="Nama"/>
         <EditText
             android:id="@+id/txtInputNama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
+            android:layout_marginBottom="10dp"
             android:drawableLeft="@drawable/ic_group_black_24dp"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
             android:text="Tanggal Lahir"/>
         <EditText
             android:id="@+id/tglInputLahir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_date_range_black_24dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
+            android:layout_marginBottom="10dp"
             android:hint="1993-12-08"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
             android:text="Jenis Kelamin"/>
-        <EditText
+
+        <com.example.kelompok.views.GenderDropdown
             android:id="@+id/txtInputJenkel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:drawableLeft="@drawable/ic_person_black_24dp"
-            android:hint="L atau P"/>
+            android:drawableRight="@drawable/ic_down_arrow_24"
+            android:gravity="center_vertical"
+            android:hint="Jenis Kelamin"
+            android:paddingLeft="10dp"
+            android:paddingRight="20dp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
             android:text="Alamat"/>
         <EditText
             android:id="@+id/txtInputAlamat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
+            android:layout_marginBottom="10dp"
             android:drawableLeft="@drawable/ic_place_black_24dp"/>
     </LinearLayout>
 

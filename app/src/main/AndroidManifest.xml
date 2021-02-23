@@ -17,10 +17,29 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.Dashboard"></activity>
-        <activity android:name=".activities.ListDataMahasiswa"></activity>
-        <activity android:name=".activities.Dialog"></activity>
-        <activity android:name=".activities.DetailData"></activity>
-        <activity android:name=".activities.UpdateData"></activity>
+        <activity android:name=".activities.ListDataMahasiswa"
+            android:parentActivityName=".activities.Dashboard">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.Dashboard"/>
+        </activity>
+        <activity android:name=".activities.Dialog"
+            android:parentActivityName=".activities.Dashboard">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.Dashboard"/>
+        </activity>
+        <activity android:name=".activities.DetailData">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.Dashboard"/>
+        </activity>
+        <activity android:name=".activities.UpdateData"
+            android:parentActivityName=".activities.Dashboard">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.Dashboard"/>
+        </activity>
         <activity android:name=".activities.HapusData"></activity>
     </application>
 

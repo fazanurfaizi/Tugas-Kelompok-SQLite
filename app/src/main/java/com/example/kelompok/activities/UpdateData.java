@@ -1,6 +1,7 @@
 package com.example.kelompok.activities;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,5 +14,16 @@ public class UpdateData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.setTitle("Update Data");
         setContentView(R.layout.update_data);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
