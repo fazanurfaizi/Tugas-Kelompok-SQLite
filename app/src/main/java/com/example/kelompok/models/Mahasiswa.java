@@ -2,30 +2,20 @@ package com.example.kelompok.models;
 
 public class Mahasiswa {
 
-    /**
-     * Nomor Induk Mahasiswa
-     */
+    private int id;
     private int nim;
-
-    /**
-     * Nama Mahasiswa
-     */
     private String nama;
-
-    /**
-     * Tanngal Lahir
-     */
     private String tanggalLahir;
-
-    /**
-     * Jenis Kelamin
-     */
     private String jenisKelamin;
-
-    /**
-     * Alamat
-     */
     private String alamat;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getNim() {
         return nim;

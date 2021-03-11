@@ -23,6 +23,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(dashboard);
                 finish();
             }
-        },waktu_loading);
+        }, waktu_loading);
     }
 }

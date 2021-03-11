@@ -18,6 +18,7 @@ import java.util.ArrayList;
 public class GenderDropdown extends AppCompatTextView implements View.OnClickListener {
 
     private ArrayList<String> options = new ArrayList<>();
+    private String selectedGender = "";
 
     public GenderDropdown(Context context) {
         super(context);
@@ -51,6 +52,7 @@ public class GenderDropdown extends AppCompatTextView implements View.OnClickLis
 
         listViewSort.setOnItemClickListener((parent, view, position, id) -> {
             this.setText(options.get(position));
+            this.selectedGender = options.get(position);
             popupWindow.dismiss();
         });
 
@@ -71,5 +73,13 @@ public class GenderDropdown extends AppCompatTextView implements View.OnClickLis
 
     public void setOptions(ArrayList<String> options) {
         this.options = options;
+    }
+
+    public String getSelectedGender() {
+        return this.selectedGender;
+    }
+
+    public void setSelectedGender(String selectedGender) {
+        this.selectedGender = selectedGender;
     }
 }

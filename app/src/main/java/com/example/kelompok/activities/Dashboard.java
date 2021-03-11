@@ -42,7 +42,7 @@ public class Dashboard extends AppCompatActivity {
         btn_informasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent detail = new Intent(getApplicationContext(), DetailData.class);
+                Intent detail = new Intent(getApplicationContext(), InformationActivity.class);
                 startActivity(detail);
             }
         });

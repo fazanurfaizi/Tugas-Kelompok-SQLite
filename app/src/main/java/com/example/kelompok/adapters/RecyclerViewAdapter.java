@@ -1,9 +1,11 @@
 package com.example.kelompok.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kelompok.R;
 import com.example.kelompok.models.Mahasiswa;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -30,7 +34,7 @@ public class RecyclerViewAdapter extends
     @NonNull
     @Override
     public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_data_mahasiswa, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.user_row_item, parent, false);
         UserViewHolder userViewHolder = new UserViewHolder(view);
 
         return userViewHolder;
@@ -39,7 +43,13 @@ public class RecyclerViewAdapter extends
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
         final Mahasiswa current = this.listMahasiswa.get(position);
-        holder.ctxNim.setText(current.getNim());
+        holder.ctxName.setText(current.getNama());
+        holder.layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onUserClick(current);
+            }
+        });
     }
 
     @Override
@@ -48,16 +58,18 @@ public class RecyclerViewAdapter extends
     }
 
     public interface OnUserClickListener {
-        void onUserClick(Mahasiswa mahasiswa, String action);
+        void onUserClick(Mahasiswa mahasiswa);
     }
 
     public class UserViewHolder extends RecyclerView.ViewHolder {
 
-        TextView ctxNim;
+        TextView ctxName;
+        LinearLayout layout;
 
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.ctxNim = itemView.findViewById(R.id.txtInputNomor);
+            this.ctxName = itemView.findViewById(R.id.ctxName);
+            this.layout = itemView.findViewById(R.id.ctxList);
         }
     }
 

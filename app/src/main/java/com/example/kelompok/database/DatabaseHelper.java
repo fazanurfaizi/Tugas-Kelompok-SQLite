@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -15,7 +16,7 @@ import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 3;
     private static final String DB_NAME = "InfoMahasiswa";
     private static final String TABLE_NAME = "mahasiswa";
 
@@ -25,12 +26,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String query = "CREATE Table " + TABLE_NAME + "(" +
-                "nim INTEGER PRIMARY KEY," +
-                "nama STRING," +
-                "tanggal_lahir STRING," +
-                "jenis_kelamin STRING," +
+        String query = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                "nim INTEGER, " +
+                "nama STRING, " +
+                "tanggal_lahir STRING, " +
+                "jenis_kelamin STRING, " +
                 "alamat STRING)";
+        db.execSQL(query);
     }
 
     @Override
@@ -57,6 +60,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getReadableDatabase();
         String[] columns = {
+                "id",
                 "nim",
                 "nama",
                 "tanggal_lahir",
@@ -67,13 +71,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.query(TABLE_NAME, columns, null, null, null, null, null);
 
         while (cursor.moveToNext()) {
-            int nim = cursor.getInt(0);
-            String nama = cursor.getString(1);
-            String tanggalLahir = cursor.getString(2);
-            String jenisKelamin = cursor.getString(3);
-            String alamat = cursor.getString(4);
+            int id = cursor.getInt(0);
+            int nim = cursor.getInt(1);
+            String nama = cursor.getString(2);
+            String tanggalLahir = cursor.getString(3);
+            String jenisKelamin = cursor.getString(4);
+            String alamat = cursor.getString(5);
 
             Mahasiswa mahasiswa = new Mahasiswa();
+            mahasiswa.setId(id);
             mahasiswa.setNim(nim);
             mahasiswa.setNama(nama);
             mahasiswa.setTanggalLahir(tanggalLahir);
@@ -95,13 +101,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("jenis_kelamin", mahasiswa.getJenisKelamin());
         contentValues.put("alamat", mahasiswa.getAlamat());
 
-        String whereClause = "nim ='" + mahasiswa.getNim() + "'";
+        String whereClause = "id ='" + mahasiswa.getId() + "'";
         db.update(TABLE_NAME, contentValues, whereClause, null);
     }
 
-    public void delete(int nim) {
+    public void delete(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        String whereClause = "nim ='" + nim + "'";
+        String whereClause = "id ='" + id + "'";
         db.delete(TABLE_NAME, whereClause, null);
     }
 
