@@ -1,12 +1,13 @@
-package com.example.kelompok;
+package com.example.kelompok.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.kelompok.R;
 
 public class Dashboard extends AppCompatActivity {
     private Button btn_input_data, btn_lihat_data, btn_informasi;
@@ -25,7 +26,7 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(getApplicationContext(),"belum ada isi",Toast.LENGTH_LONG).show();
-                Intent data_mahasiswa = new Intent(getApplicationContext(),ListDataMahasiswa.class);
+                Intent data_mahasiswa = new Intent(getApplicationContext(), ListDataMahasiswa.class);
                 startActivity(data_mahasiswa);
             }
         });
@@ -33,7 +34,7 @@ public class Dashboard extends AppCompatActivity {
         btn_input_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent inputData = new Intent(getApplicationContext(),Dialog.class);
+                Intent inputData = new Intent(getApplicationContext(), Dialog.class);
                 startActivity(inputData);
             }
         });
@@ -41,7 +42,7 @@ public class Dashboard extends AppCompatActivity {
         btn_informasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent detail = new Intent(getApplicationContext(),DetailData.class);
+                Intent detail = new Intent(getApplicationContext(), InformationActivity.class);
                 startActivity(detail);
             }
         });

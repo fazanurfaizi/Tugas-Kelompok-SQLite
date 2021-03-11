@@ -14,53 +14,71 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nomor"/>
+
         <EditText
             android:id="@+id/txtUpdateNomor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_create_black_24dp"
+            android:drawablePadding="5dp"
             android:text="0"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nama"/>
+
         <EditText
             android:id="@+id/txtUpdateNama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_group_black_24dp"
+            android:drawablePadding="5dp"
             android:text="Jalaludin"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tanggal Lahir"/>
+
         <EditText
             android:id="@+id/tglUpdateLahir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_date_range_black_24dp"
-            android:hint="1993-12-08"
-            android:text="1996-07-11"/>
+            android:drawablePadding="5dp"
+            android:hint="11-07-1997"
+            android:text="11-07-1997"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Jenis Kelamin"/>
-        <EditText
+
+        <com.example.kelompok.views.GenderDropdown
             android:id="@+id/txtUpdateJenkel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:drawableLeft="@drawable/ic_person_black_24dp"
-            android:hint="L atau P"
-            android:text="L"/>
+            android:drawableRight="@drawable/ic_down_arrow_24"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:hint="Jenis Kelamin"
+            android:paddingLeft="10dp"
+            android:paddingRight="20dp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Alamat"/>
+
         <EditText
             android:id="@+id/txtUpdateAlamat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_place_black_24dp"
+            android:drawablePadding="5dp"
             android:text="Rangkasbitung"/>
     </LinearLayout>
 

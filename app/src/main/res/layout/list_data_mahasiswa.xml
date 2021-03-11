@@ -3,11 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ListDataMahasiswa">
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    tools:context=".activities.ListDataMahasiswa"
+    android:id="@+id/framerMahasiswa">
 
     <Button
         android:id="@+id/btnInputData"
@@ -21,6 +18,5 @@
         android:text="INPUT DATA"
         android:textColor="@color/red"
         android:theme="@style/white" />
-
 
 </RelativeLayout>

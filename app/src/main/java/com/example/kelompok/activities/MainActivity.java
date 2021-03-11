@@ -1,10 +1,12 @@
-package com.example.kelompok;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.kelompok.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.kelompok.R;
 
 public class MainActivity extends AppCompatActivity {
     private int waktu_loading = 4000;
@@ -21,6 +23,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(dashboard);
                 finish();
             }
-        },waktu_loading);
+        }, waktu_loading);
     }
 }

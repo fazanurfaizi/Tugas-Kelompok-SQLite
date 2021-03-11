@@ -9,19 +9,50 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Kelompok">
-        <activity android:name=".MainActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".activities.MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Dashboard"></activity>
-        <activity android:name=".ListDataMahasiswa"></activity>
-        <activity android:name=".Dialog"></activity>
-        <activity android:name=".DetailData"></activity>
-        <activity android:name=".UpdateData"></activity>
-        <activity android:name=".HapusData"></activity>
+        <activity android:name=".activities.Dashboard" />
+        <activity
+            android:name=".activities.ListDataMahasiswa"
+            android:parentActivityName=".activities.Dashboard">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.Dashboard" />
+        </activity>
+        <activity
+            android:name=".activities.Dialog"
+            android:parentActivityName=".activities.Dashboard">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.Dashboard" />
+        </activity>
+        <activity android:name=".activities.DetailData"
+            android:parentActivityName=".activities.ListDataMahasiswa">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.ListDataMahasiswa" />
+        </activity>
+        <activity
+            android:name=".activities.UpdateData"
+            android:parentActivityName=".activities.ListDataMahasiswa">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.ListDataMahasiswa" />
+        </activity>
+        <activity
+            android:name=".activities.InformationActivity"
+            android:parentActivityName=".activities.Dashboard">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.Dashboard" />
+        </activity>
     </application>
 
 </manifest>
